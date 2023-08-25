@@ -81,5 +81,20 @@ class TesteLivro(unittest.TestCase):
         with self.assertRaises(AnoInvalidoException):
             novo_livro.ano_publicacao = -1
 
+    def teste_titulo_livro_vazio(self):
+        novo_livro = Livro(" ", ["John Glenford Myers", "Corey Sandler", "Tom Badget"], 1990)
+        with self.assertRaises(ValorVazioException):
+            novo_livro.titulo = " "
+
+    def teste_tipo_autores_do_livro(self):
+        novo_livro = Livro("The Art of Software Testing", "John Glenford Myers", 1990)
+        with self.assertRaises(TipoIncorretoException):
+            novo_livro.autores = "John Glenford Myers"
+
+    def test_criar_novo_livro_com_ano_errado(self):
+        novo_livro = Livro("The Art of Software Testing", ["John Glenford Myers", "Corey Sandler", "Tom Badget"], 196)
+        with self.assertRaises(AnoInvalidoException):
+            novo_livro.ano_publicacao = 196
+
 # if __name__ == '__main__':
 #     unittest.main()

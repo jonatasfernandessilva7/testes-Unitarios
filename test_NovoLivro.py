@@ -2,7 +2,7 @@ import unittest
 
 from livro import Livro
 
-class NovoLivro(unittest.TestCase):
+class TesteNovoLivro(unittest.TestCase):
     def test_novo_livro(self):
         novo_livro = Livro("The Art of Software Testing", ["John Glenford Myers", "Corey Sandler", "Tom Badget"], 1976)
 

@@ -14,10 +14,13 @@ class Livro():
 
     @titulo.setter
     def titulo(self, titulo):
-        if type(titulo) == str:
-            self._titulo = titulo
+        if titulo != " ":
+            if type(titulo) == str:
+                self._titulo = titulo
+            else:
+                raise TipoIncorretoException("o tipo do titulo nao eh string!")
         else:
-            raise TipoIncorretoException("o tipo do titulo nao eh string!")
+            raise ValorVazioException("o titulo nao pode ser vazio")
 
     @property
     def autores(self):
@@ -25,10 +28,13 @@ class Livro():
 
     @autores.setter
     def autores(self, autores):
-        if autores != []:
-            self._autores = autores
+        if type(autores) == list:
+            if autores != []:
+                self._autores = autores
+            else:
+                raise ValorVazioException("o livro não pode estar com autores vazios")
         else:
-            raise ValorVazioException("o livro não pode estar com autores vazios")
+            raise TipoIncorretoException("os autores, ou o autor deve estar dentro de uma lista")
 
     @property
     def ano_publicacao(self):
@@ -36,8 +42,11 @@ class Livro():
 
     @ano_publicacao.setter
     def ano_publicacao(self, ano_publicacao):
-        if ano_publicacao <= 0 or ano_publicacao > datetime.date.year:
-            raise AnoInvalidoException("ano nao pode ser menor que 0 ou maior que a data atual")
+        if len(str(ano_publicacao)) == 4:
+            if ano_publicacao <= 0 or ano_publicacao > datetime.date.year:
+                raise AnoInvalidoException("ano nao pode ser menor que 0 ou maior que a data atual")
+        else:
+            raise AnoInvalidoException("o ano esta em um formato invalido")
         self._ano_publicacao = ano_publicacao
 
 class Exemplar():
