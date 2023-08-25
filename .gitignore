@@ -1,0 +1,6 @@
+.pytest_cache
+venv
+.coverage
+Pipfile
+Pipfile.lock
+.idea
