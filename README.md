@@ -13,7 +13,7 @@
 
 #### Arquivos de teste
 
-* teste_NovoLivro
+* test_NovoLivro
 * test_unidade_usando_unittest
 * test_unidade_pytest
 
