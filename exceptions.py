@@ -32,3 +32,12 @@ class ValorVazioException(BaseException):
 
     def __str__(self):
         return self._mensagem
+
+
+class ValorInexistenteException(BaseException):
+
+    def __init__(self, mensagem):
+        self._mensagem = mensagem
+
+    def __str__(self):
+        return self._mensagem

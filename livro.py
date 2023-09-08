@@ -80,15 +80,23 @@ class Exemplar():
         else:
             raise QuantidadeInvalidaException("A quantidade deve ser maior ou igual a 0.")
 
-    def adicionar_exemplares(self, quantidade):
+    def adicionar_exemplares(self, quantidade, livro):
         if quantidade > 0:
             self._quantidade += quantidade
+            if livro:
+                print("exemplar adicionado")
+            else:
+                raise ValorInexistenteException("o exemplar não existe")
         else:
             raise QuantidadeInvalidaException("A quantidade a ser adicionada deve ser maior do que 0.")
 
-    def remover_exemplares(self, quantidade):
+    def remover_exemplares(self, quantidade, exemplar):
         if quantidade > 0:
             self._quantidade -= quantidade
+            if exemplar:
+                print("exemplar removido")
+            else:
+                raise ValorInexistenteException("o exemplar não existe")
         else:
             raise QuantidadeInvalidaException("A quantidade de livros a ser removida deve ser "
                                               "maior do que 0.")
