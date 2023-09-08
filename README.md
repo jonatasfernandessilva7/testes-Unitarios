@@ -1,10 +1,10 @@
-# Testes Unitários Utilizando Unittest
+# Testes Unitários Utilizando Unittest e pytest
 
 *** 
 
 #### Número de testes
 
-* 16 testes
+* 26 testes
 
 #### Classes testadas
 
@@ -15,6 +15,7 @@
 
 * teste_NovoLivro
 * test_unidade_usando_unittest
+* test_unidade_pytest
 
 ### Autor
 
