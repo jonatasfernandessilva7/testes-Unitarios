@@ -8,8 +8,8 @@
 
 #### Classes testadas
 
-* Livro 
-* Exemplares
+* livro 
+* exemplares
 
 #### Arquivos de teste
 
